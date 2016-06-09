@@ -47,18 +47,32 @@ var cars_data = [
     "weight": "600",
     "height": "60",
     "dealer": "Dinesh",
-    "number": "123345675);"
+    "number": "123345675"
   }
 ];
 
-car_property= document.getElementById("car_description");
-
-var car_id = location.search.split('id=')[1];
- 
+var car_size = cars_data.length;
+var car_id = location.search.split('id=')[1]; 
 var src = './images/'+car_id+'.jpg';
- 
-document.getElementById("get_image").setAttribute("src", src);
+var car_location;
+for(var i = 0;i<car_size;i++){
+	if(cars_data[i]["id"] == car_id){
+		car_location = i;
+	}
+}
 
+document.getElementById("get_image").setAttribute("src", src);
+var table_description = document.getElementById("car_description");
+
+
+
+table_description.innerHTML = table_description.innerHTML + '<tr><td> Name</td><td>' +cars_data[car_location]["name"] + 
+								'</td></tr> <tr><td>Year</td><td>'+cars_data[car_location]["year"] +
+								'</td></tr> <tr><td>Color</td><td>' +cars_data[car_location]["color"]+
+						 '</td></tr><tr> <td>Weight</td> <td>' + cars_data[car_location]["weight"]+
+						 '</td> </tr><tr><td>Height</td><td>' +cars_data[car_location]["height"]+
+						  '</td></tr><tr><td>Dealer</td><td>' +cars_data[car_location]["dealer"]+
+						   '</td></tr><tr><td>Phone</td><td>' +cars_data[car_location]["number"]+'</td></tr>';
 
 
 
