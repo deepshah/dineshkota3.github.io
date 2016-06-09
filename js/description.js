@@ -7,7 +7,7 @@ var cars_data = [
     "weight": "400",
     "height": "40",
     "dealer": "Dinesh",
-    "number": "12345675"
+    "number": "9769474123"
   },
   {
     "id": "2",
@@ -17,7 +17,7 @@ var cars_data = [
     "weight": "400",
     "height": "40",
     "dealer": "Dinesh",
-    "number": "123345675"
+    "number": "9769474123"
   },
   {
     "id": "3",
@@ -27,7 +27,7 @@ var cars_data = [
     "weight": "500",
     "height": "50",
     "dealer": "Dinesh",
-    "number": "123345675"
+    "number": "9769474123"
   },
   {
     "id": "4",
@@ -37,7 +37,7 @@ var cars_data = [
     "weight": "500",
     "height": "50",
     "dealer": "Dinesh",
-    "number": "123345675"
+    "number": "9769474123"
   },
   {
     "id": "5",
@@ -47,7 +47,7 @@ var cars_data = [
     "weight": "600",
     "height": "60",
     "dealer": "Dinesh",
-    "number": "123345675"
+    "number": "9769474123"
   }
 ];
 
@@ -75,7 +75,8 @@ table_description.innerHTML = table_description.innerHTML + '<tr><td> Name</td><
 						   '</td></tr><tr><td>Phone</td><td>' +cars_data[car_location]["number"]+'</td></tr>';
 
 
-
+var number = "tel:+91" + cars_data[car_location]["number"];
+var call_button = document.getElementById("call").setAttribute("href", number);
 
 
 
