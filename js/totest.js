@@ -52,9 +52,15 @@ var carsid = [
 ];
 
 
-alert("begin");
-d = document.getElementById("add_cars");
 
-alert(carsid.count);
+pile_up= document.getElementById("container");
+var k = carsid.length;
+
+
+for(var i = 0;i<k;i++){
+	pile_up.innerHTML = pile_up.innerHTML + '<div class="buddy" href = "/dineshkota3.github.io/description.php?id=' +carsid[i]["id"] + '" style="display: block;"><div class="avatar"  style="display: block; background-image: url(./images/' + carsid[i]["id"] + '.jpg)"></div></div>';
+}
+
+
 
 
