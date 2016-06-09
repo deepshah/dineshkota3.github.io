@@ -1,5 +1,5 @@
 alert("begin");
-d = document.getElementById("dinesh");
+d = document.getElementById("add_cars");
 
 alert("next");
 
