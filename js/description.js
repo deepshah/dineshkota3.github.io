@@ -1,4 +1,4 @@
-var carsid = [
+var cars_data = [
   {
     "id": "1",
     "name": "Lambhorgini",
@@ -51,15 +51,16 @@ var carsid = [
   }
 ];
 
+car_property= document.getElementById("car_description");
+
+var car_id = location.search.split('id=')[1];
+ 
+var src = './images/'+car_id+'.jpg';
+ 
+document.getElementById("get_image").setAttribute("src", src);
 
 
-pile_up= document.getElementById("container");
-var k = carsid.length;
 
-
-for(var i = 0;i<k;i++){
-	pile_up.innerHTML = pile_up.innerHTML + '<div class="buddy" href = "/description.html?id=' +carsid[i]["id"] + '" style="display: block;"><div class="avatar"  style="display: block; background-image: url(./images/' + carsid[i]["id"] + '.jpg)"></div></div>';
-}
 
 
 

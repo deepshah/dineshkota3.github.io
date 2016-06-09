@@ -1,23 +1,20 @@
-var flag = 0;
 var x_down = 0;
-var y_down = 0;
 var x_up = 0;
-var y_up = 0;
 var count;
-var el = 0;
+var element = 0;
 var d = 0;
 d = document.getElementsByClassName("buddy");
 count = d.length;
-el = document;
+element = document;
 
 
 
-el.addEventListener("mousedown", function(event){
+element.addEventListener("mousedown", function(event){
      x_down = event.clientX;
      y_down = event.clientY;
      
 }, false);
-el.addEventListener("mouseup", function(upevent){	
+element.addEventListener("mouseup", function(upevent){	
     x_up = upevent.clientX;
     y_up = upevent.clientY;
     
