@@ -1,3 +1,4 @@
+//hard coded the data
 var cars_data = [
   {
     "id": "1",
@@ -52,12 +53,13 @@ var cars_data = [
 ];
 
 
-
+//get the element that has to be changed
 pile_up= document.getElementById("container");
 var car_count = cars_data.length;
 
 
 for(var i = 0;i<car_count;i++){
+	//loop which piles up all the cars one above other. This runs on all the cars.
 	pile_up.innerHTML = pile_up.innerHTML + '<div class="buddy" href = "description.html?id=' +cars_data[i]["id"] + '" style="display: block;"><div class="avatar"  style="display: block; background-image: url(./images/' + cars_data[i]["id"] + '.jpg)"></div></div>';
 }
 

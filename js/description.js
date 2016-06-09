@@ -1,3 +1,4 @@
+//hard coded data
 var cars_data = [
   {
     "id": "1",
@@ -52,19 +53,24 @@ var cars_data = [
 ];
 
 var car_size = cars_data.length;
+//this below line is used to get the id of the car from the url
 var car_id = location.search.split('id=')[1]; 
-var src = './images/'+car_id+'.jpg';
-var car_location;
+
+var car_location; //specific location of the car in the array
 for(var i = 0;i<car_size;i++){
 	if(cars_data[i]["id"] == car_id){
 		car_location = i;
 	}
 }
+//location of the image is set here
+var src = './images/'+car_id+'.jpg';
 
 document.getElementById("get_image").setAttribute("src", src);
+
+
 var table_description = document.getElementById("car_description");
 
-
+// this below line is used to define the table entries
 
 table_description.innerHTML = table_description.innerHTML + '<tr><td> Name</td><td>' +cars_data[car_location]["name"] + 
 								'</td></tr> <tr><td>Year</td><td>'+cars_data[car_location]["year"] +
@@ -74,8 +80,9 @@ table_description.innerHTML = table_description.innerHTML + '<tr><td> Name</td><
 						  '</td></tr><tr><td>Dealer</td><td>' +cars_data[car_location]["dealer"]+
 						   '</td></tr><tr><td>Phone</td><td>' +cars_data[car_location]["number"]+'</td></tr>';
 
-
+//initialzing the number
 var number = "tel:+91" + cars_data[car_location]["number"];
+// call button href is set here
 var call_button = document.getElementById("call").setAttribute("href", number);
 
 
