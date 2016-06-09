@@ -51,7 +51,9 @@ var cars = '{
       "number": "123345675);"
     }
   ]
-}',obj = JSON.parse(cars);
+}';
+
+obj = JSON.parse(cars);
 
 alert("begin");
 d = document.getElementById("add_cars");
