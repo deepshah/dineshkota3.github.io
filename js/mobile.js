@@ -14,30 +14,30 @@ for(var i = 0;i<d.length;i++){
 
 function handleTouchStart(evt) {                                         
     xDown = evt.touches[0].clientX;                                                                         
+    yDown = evt.touches[0].clientY;
 };                                                
 
 function handleTouchMove(evt) {
-    if ( ! xDown ) {
+    if ( ! xDown || ! yDown ) {
         return;
     }
 
     var xUp = evt.touches[0].clientX;                                    
+    var yUp = evt.touches[0].clientY;                                    
     
 
     var xDiff = xDown - xUp;
+    var yDiff = yDown - yUp;
    
 
-         if ( xDiff > 0 ) {
-            d[count-1].innerHTML = d[count-1].innerHTML + '<div class="status dislike">Dislike!</div>';
-		
-		d[count -1].className += " rotate-right";
-		count = count - 1;
-        } else {
-           d[count-1].innerHTML = d[count-1].innerHTML + '<div class="status like">Like!</div>';
-		d[count -1].className += " rotate-left";
-		var url = d[count -1].getAttribute("href");
-		count = count - 1;
-		setTimeout(function(){window.location = url;}, 1000);
+         if ( xDiff > 20 ) {
+            swipeLeft();
+        } else if (xDiff < -20 ) {
+            swipeRight();
+        } else if (yDiff > 20 ) {
+            swipeRight();
+        } else if (yDiff < -20 ) {
+            swipeLeft();
         }                       
 
     /* reset values */

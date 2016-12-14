@@ -12,32 +12,27 @@ element = document;
 element.addEventListener("mousedown", function(event){
 	//function to know where the mouse is down
      x_down = event.clientX;
+     y_down = event.clientY;
     
      
 }, false);
 element.addEventListener("mouseup", function(upevent){
 	//fucntion executes when the mouse is up
     x_up = upevent.clientX;
+    y_up = upevent.clientY;
     
     
     if((x_down - x_up)>20){
 		//when swiped left
-		d[count-1].innerHTML = d[count-1].innerHTML + '<div class="status dislike">Dislike!</div>';
-		
-		d[count -1].className += " rotate-right";
-		count = count - 1;
-		
-		
+		swipeLeft();
 	}
 	else if((x_down - x_up)<-20){
-		//when swiped right
-		d[count-1].innerHTML = d[count-1].innerHTML + '<div class="status like">Like!</div>';
-		d[count -1].className += " rotate-left";
-		var url = d[count -1].getAttribute("href");
-		count = count - 1;
-		setTimeout(function(){window.location = url;}, 1000);
-		
-		
+		swipeRight();		
+	}
+	else if ((y_down - y_up)>20){
+		swipeRight();
+	}
+	else if((y_down - y_up)<-20){
+		swipeLeft();		
 	}
 }, false);
-

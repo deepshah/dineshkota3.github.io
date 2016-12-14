@@ -79,3 +79,23 @@ body {
   left: 40px;
   text-shadow: none;
 }
+
+.buttons {
+    margin: auto;
+    width: 10%;
+    padding: 10px;
+}
+
+.btn-like {
+  width: 50px;
+  padding: 10px;
+  color: #fff;
+  background-color: #0a0;
+}
+
+.btn-dislike {
+  width: 50px;
+  padding: 10px;
+  color: #fff;
+  background-color: #a00;
+}
